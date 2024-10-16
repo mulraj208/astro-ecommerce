@@ -1,6 +1,4 @@
 ---
-import PLPSideBar from "../components/PLPSideBar.astro";
-
 interface Props {
   title: string;
 }
@@ -19,15 +17,12 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <div class="overflow-y-scroll bg-gray-1100 bg-[url('/grid.svg')] pb-36">
-      <div class="space-y-8 lg:space-y-14">
-        <PLPSideBar />
-
-        <slot />
-      </div>
-    </div>
+    <main>
+      <slot />
+    </main>
   </body>
 </html>
+
 <style is:global>
   :root {
     --accent: 136, 58, 234;
