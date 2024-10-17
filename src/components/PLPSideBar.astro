@@ -6,6 +6,12 @@ const activeStyles = {
   padding: "10px",
 };
 
+interface Props {
+  prefix: string;
+}
+
+const { prefix } = Astro.props;
+
 const pathname = Astro.url.pathname;
 ---
 
@@ -58,7 +64,8 @@ const pathname = Astro.url.pathname;
             <a
               class="block lg:my-2"
               style={isActive ? activeStyles : {}}
-              href={category}
+              href={`/${prefix}/${category}`}
+              data-astro-prefetch
             >
               {category}
             </a>
