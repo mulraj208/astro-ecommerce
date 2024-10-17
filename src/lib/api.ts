@@ -1,6 +1,6 @@
 import type { PLPProductCard } from "../types";
 
-const sleep = (ms = 2000) => new Promise((resolve) => setTimeout(resolve, ms));
+export const sleep = (ms = 2000) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export const getProducts = async (categoryId: string | undefined) => {
   await sleep();

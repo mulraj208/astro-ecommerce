@@ -4,6 +4,7 @@ import Product from "../../components/Product.astro";
 import { getProducts } from "../../lib/api";
 import { categoryList } from "../../constants";
 import PLPSideBar from "../../components/PLPSideBar.astro";
+import { RecommendedProducts } from "../../components/RecommendedProducts";
 
 export async function getStaticPaths() {
   const staticPaths = categoryList.map((category) => ({
@@ -28,6 +29,8 @@ export const prerender = true;
             <div class="grid grid-cols-3 xl:grid-cols-4 gap-4">
               {products.map((product) => <Product product={product} />)}
             </div>
+
+            <RecommendedProducts client:visible={{rootMargin: "500px"}} />
           </div>
         </div>
       </div>
