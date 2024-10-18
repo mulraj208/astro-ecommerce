@@ -32,13 +32,13 @@ export function RecommendedProducts() {
                     Based on your preferences and shopping habits
                 </div>
             </div>
-            <div className="grid grid-cols-4 gap-6">
-                {products?.length ? products.map((product) => (
+            {products?.length ? (<div className="grid grid-cols-4 gap-6">
+                {products.map((product) => (
                     <div key={product.id} className="col-span-2 md:col-span-1">
                         <ProductCard product={product}/>
                     </div>
-                )) : <RecommendedProductsSkeleton/>}
-            </div>
+                ))}
+            </div>) : <RecommendedProductsSkeleton/>}
         </div>
     );
 }
